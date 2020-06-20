@@ -15,6 +15,10 @@ namespace BigFileUploader.Controllers
         }
 
         #region 文件上传
+        /// <summary>
+        /// 大文件分块上传
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Upload()
         {
@@ -36,6 +40,11 @@ namespace BigFileUploader.Controllers
             //}
             return Json(new { erron = 0 });//Demo，随便返回了个值，请勿参考
         }
+
+        /// <summary>
+        /// 文件块合并
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Merge()
         {
             var guid = Request["guid"];//GUID
